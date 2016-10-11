@@ -1,0 +1,40 @@
+Crea una copia local del repositorio ejecutando
+ git clone /path/to/repository
+Si utilizas un servidor remoto, ejecuta
+ git clone username@host:/path/to/repository
+ 
+#############################################
+# actualiza & fusiona
+Para actualizar tu repositorio local al commit más nuevo, ejecuta 
+ git pull origin master
+ 
+# Ver y descargar Ramas remotas
+ git remote show origin
+# Si hay alguna rama de la cual no tengamos los datos aún
+ git fetch origin
+# Obtener la rama remota
+ git checkout --track -b $rama origin/$rama
+# más simple
+ git checkout -t origin/$rama
+ 
+# Crear una rama basada en el HEAD
+ git branch $branch
+
+# Crear una nueva rama basada en el branch $other
+ git checkout -b $new_branch $other
+
+# Eliminar una rama local
+ git branch -d $branch
+
+# Eliminar una rama remota
+ git push origin :$branch
+
+# Eliminar las ramas remotas que ya no existan en origin (Ambos comandos hacen lo mismo)
+# Ejecutar con --dry-run para ver los cambios que realizará 
+ git fetch -p
+ git remote prune origin
+
+#############################################
+
+# Cambiar el nombre de una rama
+git branch -m $nombre_rama_anterior $nombre_rama_nuevo
