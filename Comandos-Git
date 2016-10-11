@@ -17,6 +17,21 @@ Para actualizar tu repositorio local al commit más nuevo, ejecuta
 # más simple
  git checkout -t origin/$rama
  
+#############################################
+
+ 
+Crea una nueva rama llamada "$rama" y cámbiate a ella usando
+ git checkout -b $rama
+
+vuelve a la rama principal
+ git checkout master
+
+borrar la rama
+ git branch -d $rama
+
+Una rama nueva no estará disponible para los demás a menos que subas (push) la rama a tu repositorio remoto
+ git push origin $rama
+ 
 # Crear una rama basada en el HEAD
  git branch $branch
 
@@ -37,4 +52,16 @@ Para actualizar tu repositorio local al commit más nuevo, ejecuta
 #############################################
 
 # Cambiar el nombre de una rama
-git branch -m $nombre_rama_anterior $nombre_rama_nuevo
+ git branch -m $nombre_rama_anterior $nombre_rama_nuevo
+
+#############################################
+
+# Add & commit
+Puedes registrar cambios (añadirlos al Index) usando
+ git add <filename>
+ git add .
+ 
+Este es el primer paso en el flujo de trabajo básico. Para hacer commit a estos cambios usa
+ git commit -m "Commit message"
+ 
+Ahora el archivo esta incluído en el HEAD, pero aún no en tu repositorio remoto.
